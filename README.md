@@ -5,18 +5,26 @@ This is a skeleton library. The component won't be ready for several minutes.
 ###### initial design notes
 In finite automaton theory, a state machine is a type of workflow, where places are the states and transitions are the edges. Further setting them apart, a state machine can only be in a single state at any moment, while a workflow can be in multiple places simultaneously.
 
-symfony/workflow seems to be tying state machines to the marking store. I believe this is a broken design.
+This component aims to show a StateMachine as a type of workflow.
 
-This component aims to show a StateMachine as type of workflow. The semantics for accessing a marking store will be consistent between both types.
+I will be implementing the symfony/workflow WorkflowInterface on the StateMachine class. Most like extending symfony/workflow Workflow. Symfony's workflow implentation is well thought out. In fact, a state machine like this component will offer is fully possible all ready.
 
-There will need to be support for this architecture in the Registry. A quick peek at symfony/workflow Definition indicates this won't be a problem. I will be ignoring definition and registry requirements during early development.
+In order to support haley composition, StateMachine definitions and implementation details must support recursive workflows. A state machine should not require a marking store. By definition, state machines have no memory and need no store. This should simplify recursion.
 
-I will be implementing the symfony/workflow WorkflowInterface on the StateMachine class.
+In practice, though, state machines are often paired with a memory device (class). The memory is architecturally related to a state machine. This memory device will use the jollyblume/workflow marking store to facilitate persistence.
 
-In order to support haley composition, StateMachine definitions and marking stores must support recursive workflows. To facilitate this, the jollyblume/workflow marking store will be used and will likely be hard-wired. I will be loosening this coupling in a later development cycle.
+Most likely, the memory device will need to use a marking store differently than a workflow. Where a workflow stores an array of places for each markingStoreId/subjectId key aggregation, the memory is likely to be storing an array of input states. I haven't gotten that far, though. This idea may be completely bogus.
 
-There are additional data required for a state machine that is not required for a workflow. The specific data needed depends on the type of state machine.
-* *no outputs type* includes a few sub-types. The only one I am focused on currently is a deterministic finite machine (dfm).
+Regardless, memory will not be added until a later development cycle. It's implementation can't impact the state machine's implementation
+
+Currently, the memory device is envisioned as a concrete state machine that takes the either the output's of a moore or mealey machine or maybe its input values as fsm inputs. The memory would only differ from other state machines in that its states and transitions ensure its inputs are persisted and mirrored from persistence as outputs. <- written in jello
+
+Because of recursion, a state machine and a memory could be combined into a single persisted state machine and the memory would largely be an internal implementation detail for a state machine.
+
+There will need to be support for this architecture in the Registry. A quick peek at symfony/workflow Definition indicates this won't be a problem. I will be minimizing the importance of definition and registry requirements during early development.
+
+There are additional data required for initialization of a state machine that is not required for a workflow. The specific data needed depends on the type of state machine.
+* *no outputs type* includes a few sub-types. The only one I will focused on is a deterministic finite machine (dfm).
 * *has outputs type* include moore and mealey machines. Both types are required for advanced state machine semantics.
 
 All types of state machines require the following definition.
