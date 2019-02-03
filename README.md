@@ -8,5 +8,6 @@ This is a skeleton library. The component won't be ready for several minutes.
     * mealy machine
   * with out output
     * dfa
+      * todo: inputs should be dispatched events?
     * nfa
     * e-nfa
