@@ -59,4 +59,14 @@ class StateMachine {
     {
         //todo
     }
+
+    public function getEnabledTransitions()
+    {
+
+    }
+
+    public function apply()
+    {
+        //todo
+    }
 }
