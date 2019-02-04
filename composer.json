@@ -11,7 +11,9 @@
     ],
     "require": {
         "php": "^7.1.3",
-        "jollyblume/workflow": "@dev"
+        "jollyblume/workflow": "@dev",
+        "moontoast/math": "^1.1",
+        "ramsey/uuid": "^3.8"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.5",

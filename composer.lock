@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "13048cb446ee83b36528a5370575f0f6",
+    "content-hash": "c97b2ac5272b72b44cda2ebc417611fb",
     "packages": [
         {
             "name": "jollyblume/workflow",
