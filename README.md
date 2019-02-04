@@ -7,8 +7,6 @@ In finite automaton theory, a state machine is a type of workflow, where places 
 
 This component aims to show a StateMachine as a type of workflow.
 
-I will be implementing the symfony/workflow WorkflowInterface on the StateMachine class. Most like extending symfony/workflow Workflow. Symfony's workflow implentation is well thought out. In fact, a state machine like this component will offer is fully possible all ready.
-
 In order to support haley composition, StateMachine definitions and implementation details must support recursive workflows. A state machine should not require a marking store. By definition, state machines have no memory and need no store. This should simplify recursion.
 
 In practice, though, state machines are often paired with a memory device (class). The memory is architecturally related to a state machine. This memory device will use the jollyblume/workflow marking store to facilitate persistence.
