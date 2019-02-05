@@ -5,17 +5,13 @@ namespace JBJ\Workflow\StateMachine;
 /**
  * Memory
  *
- * A state machine memory supporting deterministic and moore machines
+ * A state machine memory device.
  *
- * No other memory devices are needed for a mealy machine, depending on how I
- * implement the state machine output combinational logic.
- *
- * Memory devices can be extended to provide persistence or other logic.
- *
- * Persistence is not a standard state machine feature. However, there are use
- * cases where a state machine must be in it's state during the previous request
- * (for instance). In this case, the memory device could be stored in a user's
- * session.
+ * A memory device stores internal properties for a state machine and initiates
+ * next state logic when an input signal is also a clock signal.
+ *  - current state
+ *  - input signal buffer
+ *  - state machine
  *
  * Regardless, persistence is expected to be an edge-case for state machines.
  */
