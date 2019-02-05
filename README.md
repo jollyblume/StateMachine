@@ -2,26 +2,36 @@
 
 This is a skeleton library. The component won't be ready for several minutes.
 
+This README is only to help me focus during development. The information it contains may not be accurate or up to date.
+
 ###### initial design notes
-ignore refs below regarding not implementing WorkflowInterface.
+In finite automaton theory, a state machine is a type of workflow, where places are the states and transitions are the edges in a state diagram. Further setting them apart, a state machine can only be in a single state at any moment and changes state only in response to inputs. Some state machine configuration may also provide outputs, derived from some combination of current state and inputs.
 
-In finite automaton theory, a state machine is a type of workflow, where places are the states and transitions are the edges. Further setting them apart, a state machine can only be in a single state at any moment, while a workflow can be in multiple places simultaneously.
+#### Component goals
+* Show a StateMachine as constrained workflow.
+* Perform next state logic only in response to input signals.
+* Integration with symfony/workflow. In order to facilitate this, symfony/workflow::MetadataStore will need to provide state machine metadata. Currently, modeling this metadata as a configuration key.
 
-This component aims to show a StateMachine as a type of workflow.
+    MetadataStoreInterface::getWorkflowMetadata()['fsm'] // for instance
 
-In order to support haley composition, StateMachine definitions and implementation details must support recursive workflows. A state machine should not require a marking store. By definition, state machines have no memory and need no store. This should simplify recursion.
+* Support for workflow recursion, composition and state bubbling. This will likely require metadata support. This needs to be moved to jollyblume/workflow, as it is not state machine specific.
+* Stateless state machines. Persisted state will be revisited, but persistence of state in a state machine is not part of the reference design patterns.
 
-In practice, though, state machines are often paired with a memory device (class). The memory is architecturally related to a state machine. This memory device will use the jollyblume/workflow marking store to facilitate persistence.
+#### Component notes
+* References to $subject in the state machine are an array of input signals.
+* saved state must include current input values and will have some complications that will need testing.
+  * restoring state can not initiate next state logic.
+  * how are application events handled during restoring?
+    * can't rethrow missed events. too much wiring and event handling for events that will never matter.
+    * what would this infrastructure look like, though?
+      * implementation of event signals will need support from a dispatcher that listens to application events and turns the dispatched event into input signals for a state machine. Perhaps a state machines' memory device is used to send signals between the state machine listener and state machines. This would allow state machine
+* Input signals basically properties. Signal is used to describe an inputs' effect on next state.
 
-Most likely, the memory device will need to use a marking store differently than a workflow. Where a workflow stores an array of places for each markingStoreId/subjectId key aggregation, the memory is likely to be storing an array where element[0] is a starting state. State color could be modeled into other array elements. I haven't gotten that far, though. This idea may be completely bogus.
+In practice, though, state machines can be paired with a memory device (class). The memory is architecturally related to a state machine. This memory device will be used by as both the state machines' current inputs and state and as the state machine listeners' event integration
+* fsm uses memory device to send signals to a state machine, making the listener a mediator).
+* state machine uses memory device as internal properties.
+* should allow for virtual state machine instances tying differing fsm configuration to influence next state logic, all using a single state machine definition.
 
-Regardless, memory will not be added until a later development cycle. It's implementation can't impact the state machine's implementation
-
-Currently, the memory device is envisioned as a concrete state machine that takes the either the output's of a moore or mealey machine or perhaps some predetermined signal changes the memory state to 'query-state' and pulls the current state of a machine. The current state of the memory target is persisted and then provided as an output. <- written in jello
-
-Because of recursion, a state machine and a memory could be combined into a single persisted state machine and the memory would largely be an internal implementation detail for a state machine.
-
-There will need to be support for this architecture in the Registry. . I will be minimizing the importance of definition and registry requirements during early development.
 
 There are additional data required for initialization of a state machine that is not required for a workflow. The specific data needed depends on the type of state machine.
 * *no outputs type* includes a few sub-types. The only one I will focused on is a deterministic finite machine (dfm).
@@ -36,10 +46,6 @@ All types of state machines require the following definition.
 
 In addition to the common definition, moore and mealy machines require a list of outputs.
 
-This is just an overview of my development goals for this component. Currently, everything is written in jello.
-
-Suggestions and comments are always welcome.
-
 Workflow interface design considerations:
 
 * Where does *$subject* have any relevence in a state machine?
@@ -53,7 +59,3 @@ Workflow interface design considerations:
     * For *can($subject, $transitionName)*, the semantics where *$subject* is a list of signals works. (ei: is the next state *$transitionName* true with the signals presented in *$subject*). I still don't like the name $subject in a state machine. Also, a state machine should not include insight to internal combinational logic.
     * *getEnabledTransitions($subject)* where *$subject* is a list of input signals.
     * etc.
-
-I think the biggest problem is the symfony/workflow::WorkflowInterface. It includes features for too many different concerns.
-
-It seems my best path is to create an accurate representation of a state machine, then create a symfony/workflow::WorkflowInterface to facilitate component integration.
