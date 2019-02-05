@@ -3,6 +3,8 @@
 This is a skeleton library. The component won't be ready for several minutes.
 
 ###### initial design notes
+ignore refs below regarding not implementing WorkflowInterface.
+
 In finite automaton theory, a state machine is a type of workflow, where places are the states and transitions are the edges. Further setting them apart, a state machine can only be in a single state at any moment, while a workflow can be in multiple places simultaneously.
 
 This component aims to show a StateMachine as a type of workflow.
