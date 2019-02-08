@@ -2,6 +2,8 @@
 
 namespace JBJ\Workflow\StateMachine\Device;
 
+use Symfony\Workflow\WorkflowInterface;
+
 /**
  * MemoryDevice
  *

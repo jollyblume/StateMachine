@@ -2,11 +2,13 @@
 
 namespace JBJ\Workflow\StateMachine\Device;
 
-use JBJ\ComposedCollections\Collection\ComposedCollectionTrait;
+use Symfony\Workflow\WorkflowInterface;
+use JBJ\ComposedCollections\Collection\ArrayCollectionInterface;
+use JBJ\ComposedCollections\Collection\CollectionTrait;
 
-abstract class Device
+abstract class Device implements ArrayCollectionInterface
 {
-    use ComposedCollectionTrait;
+    use CollectionTrait;
 
     private $workflow;
 
