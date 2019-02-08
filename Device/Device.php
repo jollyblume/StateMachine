@@ -5,23 +5,35 @@ namespace JBJ\Workflow\StateMachine\Device;
 use Symfony\Workflow\WorkflowInterface;
 use JBJ\ComposedCollections\Collection\ArrayCollectionInterface;
 use JBJ\ComposedCollections\Collection\CollectionTrait;
+use JBJ\Workflow\StateMachine\Traits\CreateIdTrait;
 
 abstract class Device implements ArrayCollectionInterface
 {
-    use CollectionTrait;
+    use CollectionTrait, CreateIdTrait;
 
-    private $workflow;
+    private $name;
+    private $parent;
 
-    public function __construct(WorkflowInterface $workflow, array $elements = [])
+    public function __construct(array $elements = [], string $name = '')
     {
+        $this->name = $this->createId($name);
         if (!empty($elements)) {
             $this->setChildren($elements);
         }
-        $this->workflow = $workflow;
     }
 
-    public function getWorkflow()
+    public function getName()
     {
-        return $this->workflow;
+        return $this->name;
+    }
+
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    public function setParent($parent)
+    {
+        return $this->parent;
     }
 }

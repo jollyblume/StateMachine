@@ -24,8 +24,8 @@ use Symfony\Workflow\WorkflowInterface;
  */
 class MemoryDevice extends Device
 {
-    public function __construct(WorkflowInterface $workflow, array $elements = [])
+    public function __construct(array $elements = [], string $name = '')
     {
-        parent::__construct($workflow, $elements);
+        parent::__construct($elements, $name);
     }
 }

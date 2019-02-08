@@ -4,13 +4,13 @@ namespace JBJ\Workflow\StateMachine\Tests\Device;
 
 use JBJ\ComposedCollections\Collection\ArrayCollectionInterface;
 use JBJ\ComposedCollections\Tests\Collection\BaseCollectionTraitTest;
-use JBJ\Workflow\StateMachine\Device\MemoryDevice;
+use JBJ\Workflow\StateMachine\Device\OutputDevice;
 
-class MemoryDeviceTest extends BaseCollectionTraitTest
+class OutputDeviceTest extends BaseCollectionTraitTest
 {
     protected function getTestClass() : string
     {
-        return MemoryDevice::class;
+        return OutputDevice::class;
     }
 
     protected function getRules() : array
