@@ -1,9 +1,9 @@
 <?php
 
-namespace JBJ\Workflow\Traits;
+namespace JBJ\Workflow\StateMachine\Traits;
 
 use Ramsey\Uuid\Uuid;
-use JBJ\Workflow\Validator\UuidValidator;
+use JBJ\Workflow\StateMachine\Validator\UuidValidator;
 
 trait CreateIdTrait
 {

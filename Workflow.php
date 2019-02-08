@@ -11,8 +11,8 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
 /**
  * forked from symfony/workflow
  *
- * need input signals definition
- *
+ * bc:  no name param in __construct. fix this later
+ *      all metadata, including name, comes from a definition.
  */
 class Workflow implements WorkflowInterface {
     private $dispatcher;
@@ -24,7 +24,7 @@ class Workflow implements WorkflowInterface {
         $propertyAccessor = $propertyAccessor ?: PropertyAccess::createPropertyAccessor();
 
         //todo build state machine to process a definition into workflow properties.
-        // output from state machine should be a valid jhmemory device.
+        // output from state machine should be a valid memory device.
         // expected properties
         //  input signals, initial state/place, states/places, transitions, final
         // states/places, output signals (internal view)

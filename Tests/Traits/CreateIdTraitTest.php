@@ -1,9 +1,9 @@
 <?php
 
-namespace JBJ\Workflow\Tests\Traits;
+namespace JBJ\Workflow\StateMachine\Tests\Traits;
 
-use JBJ\Workflow\Traits\CreateIdTrait;
-use JBJ\Workflow\Validator\UuidValidator;
+use JBJ\Workflow\StateMachine\Traits\CreateIdTrait;
+use JBJ\Workflow\StateMachine\Validator\UuidValidator;
 use PHPUnit\Framework\TestCase;
 
 class CreateIdTraitTest extends TestCase

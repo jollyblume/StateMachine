@@ -4,7 +4,7 @@ namespace JBJ\Workflow;
 
 use JBJ\Common\Collection\ArrayCollectionInterface;
 use JBJ\Common\Collection\GraphCollectionTrait;
-use JBJ\Workflow\Traits\CreateIdTrait;
+use JBJ\Workflow\StateMachine\Traits\CreateIdTrait;
 use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 use Ramsey\Uuid\Uuid;
 

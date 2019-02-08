@@ -1,10 +1,10 @@
 <?php
 
-namespace JBJ\Workflow\Tests;
+namespace JBJ\Workflow\StateMachine\Tests;
 
 use JBJ\Common\Collection\ArrayCollectionInterface;
 use JBJ\Common\Tests\Collection\BaseCollectionTraitTest as BaseTestCase;
-use JBJ\Workflow\WorkflowCollection;
+use JBJ\Workflow\StateMachine\WorkflowCollection;
 
 class BaseCollectionTraitTest extends BaseTestCase
 {
