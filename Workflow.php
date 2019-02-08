@@ -39,14 +39,29 @@ class Workflow implements WorkflowInterface {
         //  - ...etc...
         //
         //  Any input signal can be tagged to initiate next state processing.
+        //      - handling all input as tagged would be simpler.
+        //      - do I need to aggregate multiple tagged inputs into a single input?
+        //      - non-tagged input would not be accessed until next state is processed.
         //
+        //  State machines mostly operate on binary inputs. For instance, while
+        //  processing a string value, the state processes it as a stream of characters.
+        //  Of course, a sting could be a complete token and used as a
+        //  discrete input.
+        //
+        //  array inputs? array inputs are useful non-tagged inputs, since they
+        //  could be used while executing output combinational logic. How do they
+        //  stack in state machines?
+        //      - like stings, a state machine is likely to process a single index
+        //        at a time.
+        //      - like strings, there will need to be some front-end that feeds
+        //        these to a state machine.
         //
         // output signals
         //  - any final (accepting) states (final states can be implied). only
-        //      one final state can be true (final state is a state machine).
-        //      often used in workflows to indicate final state (success, failure),
-        //      state machines to (for instance) categorize the general state of
+        //      one final state can be true
+        //  - state machines (for instance) can categorize the general state of
         //      a workflow based on its markings. //todo examine use-cases.
+        //      I expect use-cases to use state-machines as a smart data type.
         //  -
     }
 }

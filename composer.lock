@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0d703d5a1c72faaf46af4fc204d8197e",
+    "content-hash": "5c525a828f99668b51c1426446040f45",
     "packages": [
         {
-            "name": "jollyblume/workflow",
-            "version": "dev-master",
+            "name": "jollyblume/marking-store",
+            "version": "v1.0.0-rc0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jollyblume/Workflow.git",
-                "reference": "c7ff7a187d796988b8ede41b09567d1e861d6827"
+                "url": "https://github.com/jollyblume/MarkingStore.git",
+                "reference": "9dd0a896e836ab048d26237ead1b492b31b86439"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jollyblume/Workflow/zipball/c7ff7a187d796988b8ede41b09567d1e861d6827",
-                "reference": "c7ff7a187d796988b8ede41b09567d1e861d6827",
+                "url": "https://api.github.com/repos/jollyblume/MarkingStore/zipball/9dd0a896e836ab048d26237ead1b492b31b86439",
+                "reference": "9dd0a896e836ab048d26237ead1b492b31b86439",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 }
             ],
             "description": "symfony/workflow compliant multi-tenant marking store",
-            "time": "2019-02-03T04:56:02+00:00"
+            "time": "2019-02-02T19:49:37+00:00"
         },
         {
             "name": "moontoast/math",
@@ -297,16 +297,16 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v4.2.2",
+            "version": "v4.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "887de6d34c86cf0cb6cbf910afb170cdb743cb5e"
+                "reference": "bd09ad265cd50b2b9d09d65ce6aba2d29bc81fe1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/887de6d34c86cf0cb6cbf910afb170cdb743cb5e",
-                "reference": "887de6d34c86cf0cb6cbf910afb170cdb743cb5e",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/bd09ad265cd50b2b9d09d65ce6aba2d29bc81fe1",
+                "reference": "bd09ad265cd50b2b9d09d65ce6aba2d29bc81fe1",
                 "shasum": ""
             },
             "require": {
@@ -357,7 +357,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-05T16:37:49+00:00"
+            "time": "2019-01-16T20:35:37+00:00"
         },
         {
             "name": "symfony/inflector",
@@ -544,16 +544,16 @@
         },
         {
             "name": "symfony/workflow",
-            "version": "v4.2.2",
+            "version": "v4.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/workflow.git",
-                "reference": "b2e7ce6dd3d816d44dc12f38e4fdd30faa14a85f"
+                "reference": "ef0571ac233707f2d137f8d33d74533699452c72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/workflow/zipball/b2e7ce6dd3d816d44dc12f38e4fdd30faa14a85f",
-                "reference": "b2e7ce6dd3d816d44dc12f38e4fdd30faa14a85f",
+                "url": "https://api.github.com/repos/symfony/workflow/zipball/ef0571ac233707f2d137f8d33d74533699452c72",
+                "reference": "ef0571ac233707f2d137f8d33d74533699452c72",
                 "shasum": ""
             },
             "require": {
@@ -607,7 +607,7 @@
                 "transition",
                 "workflow"
             ],
-            "time": "2019-01-03T09:07:35+00:00"
+            "time": "2019-01-16T20:35:37+00:00"
         }
     ],
     "packages-dev": [
@@ -1284,16 +1284,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.5.3",
+            "version": "7.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "2cb759721e53bc05f56487f628c6b9fbb6c18746"
+                "reference": "2896657da5fb237bc316bdfc18c2650efeee0dc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2cb759721e53bc05f56487f628c6b9fbb6c18746",
-                "reference": "2cb759721e53bc05f56487f628c6b9fbb6c18746",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2896657da5fb237bc316bdfc18c2650efeee0dc0",
+                "reference": "2896657da5fb237bc316bdfc18c2650efeee0dc0",
                 "shasum": ""
             },
             "require": {
@@ -1364,7 +1364,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-02-01T05:24:07+00:00"
+            "time": "2019-02-07T14:15:04+00:00"
         },
         {
             "name": "psr/log",
@@ -1524,23 +1524,23 @@
         },
         {
             "name": "sebastian/diff",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "366541b989927187c4ca70490a35615d3fef2dce"
+                "reference": "720fcc7e9b5cf384ea68d9d930d480907a0c1a29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/366541b989927187c4ca70490a35615d3fef2dce",
-                "reference": "366541b989927187c4ca70490a35615d3fef2dce",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/720fcc7e9b5cf384ea68d9d930d480907a0c1a29",
+                "reference": "720fcc7e9b5cf384ea68d9d930d480907a0c1a29",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.0",
+                "phpunit/phpunit": "^7.5 || ^8.0",
                 "symfony/process": "^2 || ^3.3 || ^4"
             },
             "type": "library",
@@ -1576,7 +1576,7 @@
                 "unidiff",
                 "unified diff"
             ],
-            "time": "2018-06-10T07:54:39+00:00"
+            "time": "2019-02-04T06:01:07+00:00"
         },
         {
             "name": "sebastian/environment",
@@ -2074,7 +2074,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "jollyblume/workflow": 20
+        "jollyblume/marking-store": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

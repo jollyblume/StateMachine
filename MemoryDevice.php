@@ -15,7 +15,7 @@ namespace JBJ\Workflow\StateMachine;
  *
  * This is not meant to feature any persistence. It is a run-time only lifespan.
  */
-class Memory
+class MemoryDevice
 {
     //todo implementation
 }
