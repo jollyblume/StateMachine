@@ -6,7 +6,7 @@ use JBJ\ComposedCollections\Collection\ArrayCollectionInterface;
 use JBJ\ComposedCollections\Tests\Collection\BaseCollectionTraitTest as BaseTestCase;
 use JBJ\Workflow\StateMachine\WorkflowCollection;
 
-class BaseCollectionTraitTest extends BaseTestCase
+class WorkflowCollectionTest extends BaseTestCase
 {
     protected function getTestClass() : string
     {

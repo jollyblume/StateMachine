@@ -1,6 +1,6 @@
 <?php
 
-namespace JBJ\Workflow;
+namespace JBJ\Workflow\StateMachine;
 
 use JBJ\ComposedCollections\Collection\ArrayCollectionInterface;
 use JBJ\ComposedCollections\Collection\GraphCollectionTrait;
