@@ -33,8 +33,16 @@ class OutputDevice extends Device
         parent::__construct($workflow, []);
     }
 
+    public function get($key)
+    {
+        $this->computeOutput();
+        $value = $this->getChildren()[$key];
+        return $value;
+    }
+
     protected function computeOutput()
     {
+        $this->clear();
         //todo need to cache result? would need invalidation when inputs and
         //      state changes. I don't think regenerating output for each get
         //      is very optimized, but may not be much computation load.

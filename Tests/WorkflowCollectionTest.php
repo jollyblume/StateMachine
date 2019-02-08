@@ -2,8 +2,8 @@
 
 namespace JBJ\Workflow\StateMachine\Tests;
 
-use JBJ\Common\Collection\ArrayCollectionInterface;
-use JBJ\Common\Tests\Collection\BaseCollectionTraitTest as BaseTestCase;
+use JBJ\ComposedCollections\Collection\ArrayCollectionInterface;
+use JBJ\ComposedCollections\Tests\Collection\BaseCollectionTraitTest as BaseTestCase;
 use JBJ\Workflow\StateMachine\WorkflowCollection;
 
 class BaseCollectionTraitTest extends BaseTestCase

@@ -4,7 +4,7 @@ namespace JBJ\Workflow\StateMachine\Device;
 
 use JBJ\ComposedCollections\Collection\ComposedCollectionTrait;
 
-class Device
+abstract class Device
 {
     use ComposedCollectionTrait;
 
