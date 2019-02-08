@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c525a828f99668b51c1426446040f45",
+    "content-hash": "bebd0f31978768405bf949ccddff9f58",
     "packages": [
         {
             "name": "jollyblume/marking-store",
