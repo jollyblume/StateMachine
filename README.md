@@ -28,4 +28,24 @@ In this component
 * must use symfony/workflow::Definition
 * Will use jollyblume/marking-store
 * will use jollyblume/composed-collection
-* 
+
+symfony/workflow::WorkflowInterface handling (early dev)
+There are a lot of different concerns addressed by this interface and is focused on workflow behavior. State machines in this component have different behavior and will require implementation driven definition of the meaning for this interface. It is important to integrate this interface into the component, since it is a core symfony/workflow interface.
+Parameter DSL
+###### $subject
+* while a workflow has a subject or token progressing from place(s) to place(s), a state machine has a state that is not related to a subject or token. state machine state is a black box that is in a given state based on its current state in input signals.
+* in fsm, this is a memory device? or similar
+* $subject is either a current fsm internal state or input signals to processs next state.
+* $subject is always an array of input signals. note memory needs to internally persist entire current persist at next state combinational logic.
+###### $transitionName
+
+Method DSL
+###### getMarking($subject)
+###### can($subject, $transition)
+###### buildTransitionBlockerList($subject, string $transitionName): TransitionBlockerList
+###### apply($subject, $transitionName)
+###### getEnabledTransitions($subject)
+###### getName()
+###### getDefinition()
+###### getMarkingStore()
+###### getMetadataStore(): MetadataStoreInterface

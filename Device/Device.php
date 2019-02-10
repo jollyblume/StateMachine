@@ -2,7 +2,6 @@
 
 namespace JBJ\Workflow\StateMachine\Device;
 
-use Symfony\Workflow\WorkflowInterface;
 use JBJ\ComposedCollections\Collection\ArrayCollectionInterface;
 use JBJ\ComposedCollections\Collection\CollectionTrait;
 use JBJ\Workflow\StateMachine\Traits\CreateIdTrait;
@@ -22,6 +21,7 @@ abstract class Device implements ArrayCollectionInterface
         }
     }
 
+    // from symfony/workflow::WorkflowInterface
     public function getName()
     {
         return $this->name;
