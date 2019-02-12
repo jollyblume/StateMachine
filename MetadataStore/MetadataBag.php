@@ -5,7 +5,8 @@ namespace JBJ\Workflow\StateMachine\MetadataStore;
 use Doctrine\Common\Collections\ArrayCollection;
 use JBJ\ComposedCollections\Collection\ArrayCollectionInterface;
 use JBJ\ComposedCollections\Collection\CollectionTrait;
-use JBJ\Workflow\StateMachine\Traits\CreateIdTrait;
+use JBJ\ComposedCollections\Traits\ElementNameTrait;
+use JBJ\ComposedCollections\Traits\ElementParentTrait;
 
 /**
  * todo add/remove/get
@@ -16,21 +17,14 @@ use JBJ\Workflow\StateMachine\Traits\CreateIdTrait;
  */
 class MetadataBag implements ArrayCollectionInterface
 {
-    use CollectionTrait, CreateIdTrait;
-
-    private $name;
+    use CollectionTrait, ElementNameTrait, ElementParentTrait;
 
     public function __construct(string $name = '', array $elements = [])
     {
-        $this->name = $this->createId($name);
+        $this->setName($name);
         if (!empty($elements)) {
             $this->setChildren($elements);
         }
-    }
-
-    public function getName()
-    {
-        return $this->name;
     }
 
     protected function setChildren(array $elements)
@@ -47,7 +41,7 @@ class MetadataBag implements ArrayCollectionInterface
     protected function migrateValue($value)
     {
         if (!is_array($value)) {
-            return $value;
+            $value = [$value];
         }
 
         $collection = new ArrayCollection($value);

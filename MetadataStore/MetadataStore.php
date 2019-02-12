@@ -24,6 +24,7 @@ class MetadataStore implements MetadataStoreInterface
         }
         $this->bag = $bag;
     }
+    
     protected function normalizeCollection(string $typeName)
     {
         $bag = $this->bag;
