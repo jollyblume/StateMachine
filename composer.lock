@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "007c639d446c9e7f1c0a5341f57f86e8",
+    "content-hash": "aea1d4c8ac32de4d6a3c12bc69303a7f",
     "packages": [
         {
             "name": "doctrine/collections",
@@ -79,12 +79,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jollyblume/ComposedCollections.git",
-                "reference": "95abf01c1ab22c2fb3dd5815d6e789507822e90b"
+                "reference": "b10aafee2ce761ec7a9393039e35bd0b5a8ab8ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jollyblume/ComposedCollections/zipball/95abf01c1ab22c2fb3dd5815d6e789507822e90b",
-                "reference": "95abf01c1ab22c2fb3dd5815d6e789507822e90b",
+                "url": "https://api.github.com/repos/jollyblume/ComposedCollections/zipball/b10aafee2ce761ec7a9393039e35bd0b5a8ab8ea",
+                "reference": "b10aafee2ce761ec7a9393039e35bd0b5a8ab8ea",
                 "shasum": ""
             },
             "require": {
@@ -101,7 +101,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "JBJ\\ComposedCollections\\": ""
+                    "JBJ\\ComposedCollections\\": "lib"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -115,7 +115,7 @@
                 }
             ],
             "description": "Composed implementations of Doctrine's ArrayCollection",
-            "time": "2019-02-11T21:34:38+00:00"
+            "time": "2019-02-12T19:28:28+00:00"
         },
         {
             "name": "jollyblume/marking-store",
@@ -123,22 +123,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jollyblume/MarkingStore.git",
-                "reference": "5a72965f664404495fb80fe5f0ebfe9eb22135f2"
+                "reference": "d21e0775473f09a1d4d8ae39c49d8aca3ee22bae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jollyblume/MarkingStore/zipball/5a72965f664404495fb80fe5f0ebfe9eb22135f2",
-                "reference": "5a72965f664404495fb80fe5f0ebfe9eb22135f2",
+                "url": "https://api.github.com/repos/jollyblume/MarkingStore/zipball/d21e0775473f09a1d4d8ae39c49d8aca3ee22bae",
+                "reference": "d21e0775473f09a1d4d8ae39c49d8aca3ee22bae",
                 "shasum": ""
             },
             "require": {
                 "jollyblume/composed-collections": "@dev",
-                "moontoast/math": "^1.1",
+                "jollyblume/workflow-common": "@dev",
                 "php": "^7.1.3",
-                "ramsey/uuid": "^3.8",
-                "symfony/event-dispatcher": "^4.2",
-                "symfony/property-access": "^4.2",
-                "symfony/workflow": "^4.2"
+                "symfony/event-dispatcher": "^4.2"
             },
             "require-dev": {
                 "phpunit/phpunit": "^7.5",
@@ -147,7 +144,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "JBJ\\Workflow\\MarkingStore\\": ""
+                    "JBJ\\Workflow\\MarkingStore\\": "lib"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -161,7 +158,51 @@
                 }
             ],
             "description": "symfony/workflow compliant multi-tenant marking store",
-            "time": "2019-02-11T21:44:34+00:00"
+            "time": "2019-02-12T20:30:28+00:00"
+        },
+        {
+            "name": "jollyblume/workflow-common",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jollyblume/WorkflowCommon.git",
+                "reference": "9d2f965053df1c13bfa71fc5fd60e53709204348"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jollyblume/WorkflowCommon/zipball/9d2f965053df1c13bfa71fc5fd60e53709204348",
+                "reference": "9d2f965053df1c13bfa71fc5fd60e53709204348",
+                "shasum": ""
+            },
+            "require": {
+                "jollyblume/composed-collections": "@dev",
+                "php": "^7.1.3",
+                "symfony/event-dispatcher": "^4.2",
+                "symfony/property-access": "^4.2",
+                "symfony/workflow": "^4.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5",
+                "psr/log": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JBJ\\Workflow\\": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jolly Blume",
+                    "email": "jollyblume2@gmail.com"
+                }
+            ],
+            "description": "Utility classes and common code",
+            "time": "2019-02-12T19:37:40+00:00"
         },
         {
             "name": "moontoast/math",
@@ -2187,6 +2228,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "jollyblume/composed-collections": 20,
+        "jollyblume/workflow-common": 20,
         "jollyblume/marking-store": 20
     },
     "prefer-stable": false,
