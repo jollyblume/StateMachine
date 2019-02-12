@@ -6,15 +6,34 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 
-class Workflow {
+class Workflow
+{
+    private $definition;
     private $dispatcher;
     private $propertyAccessor;
 
-    public function __construct(DefinitionInterface $definition, EventDispatcherInterface $dispatcher, PropertyAccessorInterface $propertyAccessor = null)
+    public function __construct(DefinitionInterface $definition)
     {
-        $this->dispatcher = $dispatcher;
-        $propertyAccessor = $propertyAccessor ?: PropertyAccess::createPropertyAccessor();
+        $this->definition = $definition;
     }
 
-    protected function
+    public function getDispatcher()
+    {
+        return $this->dispatcher;
+    }
+
+    public function setDispatcher(EventDispatcherInterface $dispatcher)
+    {
+        $this->dispatcher = $dispatcher;
+    }
+
+    public function setPropertyAccessor(PropertyAccessorInterface $propertyAccessor)
+    {
+        $this->propertyAccessor = $propertyAccessor;
+    }
+
+    public function getPropertyAccessor()
+    {
+        return $this->propertyAccessor;
+    }
 }
