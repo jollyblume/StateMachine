@@ -1,13 +1,13 @@
 <?php
 
-namespace JBJ\Workflow\StateMachine\Metadata;
+namespace JBJ\Workflow\StateMachine\Definition;
 
 use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 use JBJ\Workflow\Collection\ArrayCollectionInterface;
 use JBJ\Workflow\Collection\GraphCollectionTrait;
 use JBJ\Workflow\Traits\CreateIdTrait;
 
-class MetadataBag implements ArrayCollectionInterface
+class MetadataCart implements ArrayCollectionInterface
 {
     use GraphCollectionTrait {
         getName as protected;
@@ -16,36 +16,36 @@ class MetadataBag implements ArrayCollectionInterface
     }
     use CreateIdTrait;
 
-    public function __construct(PropertyAccessorInterface $propertyAccessor = null, array $items = [], string $bagName = '')
+    public function __construct(PropertyAccessorInterface $propertyAccessor = null, array $bags = [], string $cartName = '')
     {
-        $name = $this->createId($bagName);
+        $name = $cartName;
         $rules = [
             'name' => [
-                'itemName',
+                'bagName',
                 'isDisabled' => false,
                 'isValid' => true,
             ],
             'parent' => [
-                'parentBag',
+                'parentCart',
                 'isDisabled' => false,
                 'isValid' => true,
             ],
         ];
-        $this->initializeTrait($name, $items, $rules, $propertyAccessor);
+        $this->initializeTrait($name, $bags, $rules, $propertyAccessor);
     }
 
-    public function getBagName()
+    public function getCartName()
     {
         return $this->getName();
     }
 
-    public function getParentCart()
+    public function getParentRepository()
     {
         return $this->getParent();
     }
 
-    public function setParentCart($parentCart)
+    public function setParentRepository($parentRepository)
     {
-        $this->setParent($parentCart);
+        $this->setParent($parentRepository);
     }
 }

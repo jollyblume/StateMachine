@@ -1,9 +1,9 @@
 <?php
 
-namespace JBJ\Workflow\StateMachine\Tests\Metadata;
+namespace JBJ\Workflow\StateMachine\Tests\Definition;
 
 use JBJ\Workflow\Collection\ArrayCollectionInterface;
-use JBJ\Workflow\StateMachine\Metadata\MetadataItem;
+use JBJ\Workflow\StateMachine\Definition\MetadataItem;
 use JBJ\Workflow\Tests\Collection\BaseCollectionTraitTest;
 
 class MetadataItemTest extends BaseCollectionTraitTest

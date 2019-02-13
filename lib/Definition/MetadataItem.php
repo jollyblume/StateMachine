@@ -1,6 +1,6 @@
 <?php
 
-namespace JBJ\Workflow\StateMachine\Metadata;
+namespace JBJ\Workflow\StateMachine\Definition;
 
 use JBJ\Workflow\Collection\ArrayCollectionInterface;
 use JBJ\Workflow\Collection\CollectionTrait;

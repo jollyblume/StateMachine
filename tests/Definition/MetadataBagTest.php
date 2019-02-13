@@ -1,28 +1,28 @@
 <?php
 
-namespace JBJ\Workflow\Tests\Collection;
+namespace JBJ\Workflow\StateMachine\Tests\Definition;
 
 use JBJ\Workflow\Collection\ArrayCollectionInterface;
-use JBJ\Workflow\StateMachine\Metadata\MetadataCart;
+use JBJ\Workflow\StateMachine\Definition\MetadataBag;
 use JBJ\Workflow\Tests\Collection\BaseCollectionTraitTest;
 
-class MetadataCartTest extends BaseCollectionTraitTest
+class MetadataBagTest extends BaseCollectionTraitTest
 {
     protected function getTestClass() : string
     {
-        return MetadataCart::class;
+        return MetadataBag::class;
     }
 
     protected function getRules() : array
     {
         $rules = [
             'name' => [
-                'bagName',
+                'itemName',
                 'isDisabled' => false,
                 'isValid' => true,
             ],
             'parent' => [
-                'parentCart',
+                'parentBag',
                 'isDisabled' => false,
                 'isValid' => true,
             ],
@@ -52,15 +52,15 @@ class MetadataCartTest extends BaseCollectionTraitTest
             {
                 return $this->name;
             }
-            public function getBagName()
+            public function getItemName()
             {
                 return $this->name;
             }
-            public function getParentCart()
+            public function getParentBag()
             {
                 return $this->parent;
             }
-            public function setParentCart($parent)
+            public function setParentBag($parent)
             {
                 $this->parent = $parent;
             }
