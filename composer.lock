@@ -79,12 +79,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jollyblume/MarkingStore.git",
-                "reference": "c3ea7dae9e5026c239332e056722be8ae3cc660b"
+                "reference": "503608e00ec7cfb64d010023a1ae8860c612c642"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jollyblume/MarkingStore/zipball/c3ea7dae9e5026c239332e056722be8ae3cc660b",
-                "reference": "c3ea7dae9e5026c239332e056722be8ae3cc660b",
+                "url": "https://api.github.com/repos/jollyblume/MarkingStore/zipball/503608e00ec7cfb64d010023a1ae8860c612c642",
+                "reference": "503608e00ec7cfb64d010023a1ae8860c612c642",
                 "shasum": ""
             },
             "require": {
@@ -113,7 +113,7 @@
                 }
             ],
             "description": "symfony/workflow compliant multi-tenant marking store",
-            "time": "2019-02-13T19:23:18+00:00"
+            "time": "2019-02-13T22:10:07+00:00"
         },
         {
             "name": "jollyblume/workflow-common",
@@ -121,12 +121,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jollyblume/WorkflowCommon.git",
-                "reference": "a15f67fd6cc11603b1618b228b35d26107fd6116"
+                "reference": "4db59ecbcb22e9178fcbe0e97b6147deec1e93ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jollyblume/WorkflowCommon/zipball/a15f67fd6cc11603b1618b228b35d26107fd6116",
-                "reference": "a15f67fd6cc11603b1618b228b35d26107fd6116",
+                "url": "https://api.github.com/repos/jollyblume/WorkflowCommon/zipball/4db59ecbcb22e9178fcbe0e97b6147deec1e93ee",
+                "reference": "4db59ecbcb22e9178fcbe0e97b6147deec1e93ee",
                 "shasum": ""
             },
             "require": {
@@ -159,7 +159,7 @@
                 }
             ],
             "description": "Utility classes and common code",
-            "time": "2019-02-13T22:08:07+00:00"
+            "time": "2019-02-13T22:55:12+00:00"
         },
         {
             "name": "moontoast/math",
