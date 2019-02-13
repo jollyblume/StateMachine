@@ -33,7 +33,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "JBJ\\Workflow\\StateMachine\\Tests\\": "tests"
+            "JBJ\\Workflow\\StateMachine\\Tests\\": "tests",
+            "JBJ\\Workflow\\Tests\\": "vendor/jollyblume/workflow-common/tests"
         }
     }
 }

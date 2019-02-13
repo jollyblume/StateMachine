@@ -15,17 +15,13 @@
 
     <testsuites>
         <testsuite name="state-machine">
-            <directory>./tests/</directory>
+            <directory>./tests</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
-            <directory>./</directory>
-            <exclude>
-                <directory>./tests</directory>
-                <directory>./vendor</directory>
-            </exclude>
+            <directory>./lib/</directory>
         </whitelist>
     </filter>
 </phpunit>
