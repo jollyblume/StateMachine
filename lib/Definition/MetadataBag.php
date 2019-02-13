@@ -13,6 +13,8 @@ class MetadataBag implements ArrayCollectionInterface
         getName as protected;
         getParent as protected;
         setParent as protected;
+        getDispatcher as protected;
+        getPropertyAccessor as protected;
     }
     use CreateIdTrait;
 
