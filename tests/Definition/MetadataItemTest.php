@@ -24,4 +24,19 @@ class MetadataItemTest extends BaseCollectionTraitTest
         $collection = new $testClass($name, $elements);
         return $collection;
     }
+
+    public function testGetItemName()
+    {
+        $collection = $this->createCollection('test.bag');
+        $this->assertEquals('test.bag', $collection->getItemName());
+    }
+
+    public function testSetParentBag()
+    {
+        $collection = $this->createCollection('test.item');
+        $parent = new class() {
+        };
+        $collection->setParentBag($parent);
+        $this->assertEquals($parent, $collection->getParentBag());
+    }
 }

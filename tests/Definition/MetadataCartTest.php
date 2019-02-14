@@ -79,4 +79,19 @@ class MetadataCartTest extends BaseCollectionTraitTest
         };
         return $element;
     }
+
+    public function testGetCartName()
+    {
+        $collection = $this->createCollection('test.cart');
+        $this->assertEquals('test.cart', $collection->getCartName());
+    }
+
+    public function testSetParentRepository()
+    {
+        $collection = $this->createCollection('test.cart');
+        $parent = new class() {
+        };
+        $collection->setParentRepository($parent);
+        $this->assertEquals($parent, $collection->getParentRepository());
+    }
 }

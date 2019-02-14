@@ -3,26 +3,26 @@
 namespace JBJ\Workflow\StateMachine\Tests\Definition;
 
 use JBJ\Workflow\Collection\ArrayCollectionInterface;
-use JBJ\Workflow\StateMachine\Definition\MetadataBag;
+use JBJ\Workflow\StateMachine\Definition\MetadataRepository;
 use JBJ\Workflow\Tests\Collection\BaseCollectionTraitTest;
 
-class MetadataBagTest extends BaseCollectionTraitTest
+class MetadataRepositoryTest extends BaseCollectionTraitTest
 {
     protected function getTestClass() : string
     {
-        return MetadataBag::class;
+        return MetadataRepository::class;
     }
 
     protected function getRules() : array
     {
         $rules = [
             'name' => [
-                'itemName',
+                'cartName',
                 'isDisabled' => false,
                 'isValid' => true,
             ],
             'parent' => [
-                'parentBag',
+                'parentRepository',
                 'isDisabled' => false,
                 'isValid' => true,
             ],
@@ -52,15 +52,15 @@ class MetadataBagTest extends BaseCollectionTraitTest
             {
                 return $this->name;
             }
-            public function getItemName()
+            public function getCartName()
             {
                 return $this->name;
             }
-            public function getParentBag()
+            public function getParentRepository()
             {
                 return $this->parent;
             }
-            public function setParentBag($parent)
+            public function setParentRepository($parent)
             {
                 $this->parent = $parent;
             }
@@ -80,18 +80,9 @@ class MetadataBagTest extends BaseCollectionTraitTest
         return $element;
     }
 
-    public function testGetBagName()
+    public function testGetRepositoryName()
     {
-        $collection = $this->createCollection('test.bag');
-        $this->assertEquals('test.bag', $collection->getBagName());
-    }
-
-    public function testSetParentCart()
-    {
-        $collection = $this->createCollection('test.bag');
-        $parent = new class() {
-        };
-        $collection->setParentCart($parent);
-        $this->assertEquals($parent, $collection->getParentCart());
+        $collection = $this->createCollection('test.repo');
+        $this->assertEquals('test.repo', $collection->getRepositoryName());
     }
 }
