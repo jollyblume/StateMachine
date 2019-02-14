@@ -5,7 +5,6 @@ namespace JBJ\Workflow\StateMachine\Definition;
 use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 use JBJ\Workflow\Collection\ArrayCollectionInterface;
 use JBJ\Workflow\Collection\GraphCollectionTrait;
-use JBJ\Workflow\Traits\CreateIdTrait;
 
 class MetadataCart implements ArrayCollectionInterface
 {
@@ -13,12 +12,12 @@ class MetadataCart implements ArrayCollectionInterface
         getName as protected;
         getParent as protected;
         setParent as protected;
+        getDispatcher as protected;
+        getPropertyAccessor as protected;
     }
-    use CreateIdTrait;
 
-    public function __construct(PropertyAccessorInterface $propertyAccessor = null, array $bags = [], string $cartName = '')
+    public function __construct(array $bags = [], string $cartName = '', PropertyAccessorInterface $propertyAccessor = null)
     {
-        $name = $cartName;
         $rules = [
             'name' => [
                 'bagName',
@@ -31,7 +30,7 @@ class MetadataCart implements ArrayCollectionInterface
                 'isValid' => true,
             ],
         ];
-        $this->initializeTrait($name, $bags, $rules, $propertyAccessor);
+        $this->initializeTrait($cartName, $bags, $rules, $propertyAccessor);
     }
 
     public function getCartName()

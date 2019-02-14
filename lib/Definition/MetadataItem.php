@@ -21,9 +21,7 @@ class MetadataItem implements ArrayCollectionInterface
     public function __construct(string $itemName, array $metadata = [])
     {
         $this->setName($itemName);
-        if (!empty($metadata)) {
-            $this->setChildren($metadata);
-        }
+        $this->saveChildren($metadata);
     }
 
     public function getItemName()

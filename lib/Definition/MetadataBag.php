@@ -5,7 +5,6 @@ namespace JBJ\Workflow\StateMachine\Definition;
 use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 use JBJ\Workflow\Collection\ArrayCollectionInterface;
 use JBJ\Workflow\Collection\GraphCollectionTrait;
-use JBJ\Workflow\Traits\CreateIdTrait;
 
 class MetadataBag implements ArrayCollectionInterface
 {
@@ -16,11 +15,9 @@ class MetadataBag implements ArrayCollectionInterface
         getDispatcher as protected;
         getPropertyAccessor as protected;
     }
-    use CreateIdTrait;
 
     public function __construct(PropertyAccessorInterface $propertyAccessor = null, array $items = [], string $bagName = '')
     {
-        $name = $bagName;
         $rules = [
             'name' => [
                 'itemName',
@@ -33,7 +30,7 @@ class MetadataBag implements ArrayCollectionInterface
                 'isValid' => true,
             ],
         ];
-        $this->initializeTrait($name, $items, $rules, $propertyAccessor);
+        $this->initializeTrait($bagName, $items, $rules, $propertyAccessor);
     }
 
     public function getBagName()
