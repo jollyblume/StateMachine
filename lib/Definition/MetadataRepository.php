@@ -28,6 +28,7 @@ class MetadataRepository implements ArrayCollectionInterface
         ];
         $propertyAccessor = $propertyAccessor ?: $this->createPropertyAccessor();
         $this->initializeTrait($repositoryName, $carts, $rules, $propertyAccessor);
+        $this->setPersistPropertyAccessorHere(true);
     }
 
     public function getRepositoryName()
