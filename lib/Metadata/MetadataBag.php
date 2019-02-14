@@ -1,6 +1,6 @@
 <?php
 
-namespace JBJ\Workflow\StateMachine\Definition;
+namespace JBJ\Workflow\StateMachine\Metadata;
 
 use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 use JBJ\Workflow\Collection\ArrayCollectionInterface;
