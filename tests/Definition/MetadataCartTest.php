@@ -72,6 +72,10 @@ class MetadataCartTest extends BaseCollectionTraitTest
             {
                 $this->otherValue = $otherValue;
             }
+            public function __toString()
+            {
+                return $this->getName();
+            }
         };
         return $element;
     }
