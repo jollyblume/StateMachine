@@ -12,11 +12,10 @@ class MetadataBag implements ArrayCollectionInterface
         getName as protected;
         getParent as protected;
         setParent as protected;
-        getDispatcher as protected;
         getPropertyAccessor as protected;
     }
 
-    public function __construct(PropertyAccessorInterface $propertyAccessor = null, array $items = [], string $bagName = '')
+    public function __construct(array $items = [], string $bagName = '', PropertyAccessorInterface $propertyAccessor = null)
     {
         $rules = [
             'name' => [

@@ -34,7 +34,7 @@ class MetadataCartTest extends BaseCollectionTraitTest
     {
         $propertyAccessor = $this->getPropertyAccessor();
         $testClass = $this->getTestClass();
-        $collection = new $testClass($propertyAccessor, $elements, $name);
+        $collection = new $testClass($elements, $name, $propertyAccessor);
         return $collection;
     }
 

@@ -26,6 +26,7 @@ class MetadataRepository implements ArrayCollectionInterface
                 'isValid' => true,
             ],
         ];
+        $propertyAccessor = $propertyAccessor ?: $this->createPropertyAccessor();
         $this->initializeTrait($repositoryName, $carts, $rules, $propertyAccessor);
     }
 
